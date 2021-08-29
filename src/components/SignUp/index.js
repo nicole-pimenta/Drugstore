@@ -1,21 +1,9 @@
-//form
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-//styled-components
 import { Link, useHistory } from "react-router-dom";
-
-//material-ui
 import { TextField, Button } from "@material-ui/core";
-import {
-  Container,
-  Background,
-  Content,
-  AnimationContainer,
-  HeaderContainer,
-} from "./styles";
-
-import { toast } from "react-toastify";
+import { Container, Background, Content, AnimationContainer } from "./styles";
 
 const SignUp = () => {
   const history = useHistory();
@@ -40,18 +28,9 @@ const SignUp = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitFunction = ({ username, password }) => {
-    const userData = { username, password };
-
-    localStorage.setItem("Drugstore:userdata", JSON.stringify(userData));
-
-    console.log(userData);
-    /*api
-      .post("/users/", newUser)
-      .then((_) => {
-        toast.success("Sucesso ao criar conta");
-        return history.push("/login");
-      })
-      .catch((err) => toast.error("Erro ao criar conta"));*/
+    localStorage.setItem("Drugstore:username", JSON.stringify(username));
+    localStorage.setItem("Drugstore:password", JSON.stringify(password));
+    history.push("/login");
   };
 
   return (
@@ -115,7 +94,6 @@ const SignUp = () => {
                 type="password"
               />
             </div>
-
             <Button
               type="submit"
               variant="contained"

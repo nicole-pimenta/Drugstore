@@ -18,18 +18,20 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: stretch;
+  padding: 20px;
 `;
 
 export const Background = styled.div`
   @media (min-width: 1100px) {
     width: 50vw;
+    margin: 0 auto;
     background-size: contain;
   }
 
   section {
     height: 90vh;
-    width: 120%;
-    background: url(${SignUpImage}) no-repeat center;
+    width: 100%;
+    background: url(${SignUpImage}) no-repeat;
   }
 `;
 
@@ -64,7 +66,7 @@ export const AnimationContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: ${apppearFromRight} 1s;
+  animation: ${apppearFromRight} 2s;
   h1 {
     margin-bottom: 25px;
     color: #5965e0;
@@ -103,7 +105,7 @@ export const AnimationContainer = styled.div`
     }
 
     p {
-      margin: 5px auto;
+      margin: 25px auto;
       color: #2e384d;
       font-size: 20px;
     }
@@ -111,7 +113,7 @@ export const AnimationContainer = styled.div`
     a {
       font-weight: bolder;
       color: var(--violetCore);
-      font-size: 18px;
+      font-size: 25px;
     }
 
     .error {
